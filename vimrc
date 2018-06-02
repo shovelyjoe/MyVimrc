@@ -8,12 +8,14 @@ colorscheme onedark
 
 "Create bar column to show ideal file width (90 chars)
 "Line numbering on
+"Toggle Line number & Signify (Version Control Symbols)
 set colorcolumn=90
 set number
+nmap <leader>l :set invnumber <bar> SignifyToggle<CR>
 
 "Map Leader Key to spacebar
 "Leader shortcut to source vimrc
-"<Leader> x2 === cd - (but for files)
+"<Leader> x2 == cd - (but for files)
 let mapleader=" "
 map <Leader>s :source ~/.vimrc<CR>
 nnoremap <Leader><Leader> :e#<CR>
@@ -35,9 +37,7 @@ set autoindent
 autocmd BufWritePre * :%s/\s\+$//e
 
 "Highlight searched terms
-"Cancel highlight with Esc
 set hlsearch
-nnoremap <silent> <Esc> :nohlsearch<Bar>:echo<CR>
 
 "Map split jumps to Ctrl+[h,j,k,l]
 nnoremap <C-J> <C-W><C-J>
@@ -50,4 +50,17 @@ set splitright
 "Show matching parenthesis
 set showmatch
 
+"Nerdtree display hidden files
+"Toggle display of the tree with <Leader> + n
+"Locate the focused file in the tree with <Leader> + j
+"Always open the tree when booting Vim, but don’t focus it
+"Do not display some useless files in the tree
+"Close Nerdtree automatically when other windows are closing
+let NERDTreeShowHidden=1
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>j :NERDTreeFind<CR>
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
+let NERDTreeIgnore=['\.DS_Store', '\~$', '\.swp']
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
