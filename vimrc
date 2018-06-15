@@ -6,18 +6,11 @@ filetype on
 syntax on
 colorscheme onedark
 
-"Create bar column to show ideal file width (90 chars)
-"Line numbering on
-"Toggle Line number & Signify (Version Control Symbols)
-set colorcolumn=90
-set number
-nmap <leader>l :set invnumber <bar> SignifyToggle<CR>
-
 "Map Leader Key to spacebar
 "Leader shortcut to source vimrc
 "<Leader> x2 == cd - (but for files)
 let mapleader=" "
-map <Leader>s :source ~/.vimrc<CR>
+map <Leader>s :source ~/.vim/vimrc<CR>
 nnoremap <Leader><Leader> :e#<CR>
 
 "Modernise memory usage
@@ -47,8 +40,21 @@ nnoremap <C-H> <C-W><C-H>
 set splitbelow
 set splitright
 
+"Auto-complete curly braces
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
 "Show matching parenthesis
 set showmatch
+
+"Create bar column to show ideal file width (90 chars)
+"Line numbering on
+"Toggle Line number & Signify (Version Control Symbols)
+set colorcolumn=90
+set number
+nmap <Leader>l :set invnumber <bar> SignifyToggle<CR>
 
 "Nerdtree display hidden files
 "Toggle display of the tree with <Leader> + n
