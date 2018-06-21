@@ -14,7 +14,7 @@ vi
 
 
 #### Sources
-https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally . 
-https://medium.com/@alexlafroscia/writing-js-in-vim-4c971a95fd49 . 
-https://jeffkreeftmeijer.com/vim-number/ . 
+https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally  
+https://medium.com/@alexlafroscia/writing-js-in-vim-4c971a95fd49  
+https://jeffkreeftmeijer.com/vim-number/  
 
