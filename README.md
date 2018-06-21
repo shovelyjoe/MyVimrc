@@ -11,3 +11,8 @@ ln -s vimrc ~/.vimrc
 vi
 
 ```
+
+
+#### Sources
+https://robots.thoughtbot.com/vim-splits-move-faster-and-more-naturally
+
